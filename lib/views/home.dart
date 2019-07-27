@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
-var headerImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA1PhH6xRJnhpDJkgaQAnhc2d4MOZ50ng4y4muvIeqzXx1iEXP";
+var headerImage = "http://5b0988e595225.cdn.sohucs.com/q_70,c_zoom,w_640/images/20190401/8a1d6a2fb3f848cd9baf13fa80c8b6ae.jpeg";
+var landschaftImage = "http://img06file.tooopen.com/images/20171224/tooopen_sy_231021357463.jpg";
 
 class HomePage extends StatelessWidget {
   @override
@@ -87,7 +88,7 @@ class CellView extends StatelessWidget {
               width: width,
               fit: BoxFit.fitWidth,
               imageUrl:
-                  "http://img.zhaogexing.com/touxiang/180326/3-1P326125158.jpg",
+              landschaftImage,
               placeholder: (context, url) => new CircularProgressIndicator(),
               errorWidget: (context, url, error) => new Icon(Icons.error),
             ),
