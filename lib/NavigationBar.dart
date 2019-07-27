@@ -3,16 +3,15 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class NavigationBar extends StatefulWidget {
   final Function onTap;
+  int seletedIndex = 0;
 
-  NavigationBar(this.onTap);
+  NavigationBar({@required this.onTap, this.seletedIndex});
 
   @override
   _NavigationBarState createState() => _NavigationBarState();
 }
 
 class _NavigationBarState extends State<NavigationBar> {
-  int seletedIndex = 2;
-
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -27,9 +26,19 @@ class _NavigationBarState extends State<NavigationBar> {
     ];
 
     return Container(
+      decoration: new BoxDecoration(
+        color: Colors.white,
+        border: new Border.all(color: Colors.white, width: 0.5),
+        boxShadow: [
+          BoxShadow(
+              color: Colors.black26,
+              offset: Offset(5.0, 5.0),
+              blurRadius: 5.0,
+              spreadRadius: 5.0),
+        ],
+      ),
       height: 80,
       width: width,
-      color: Colors.white,
       padding: EdgeInsets.only(bottom: 18, left: 10, right: 10),
       child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -38,12 +47,12 @@ class _NavigationBarState extends State<NavigationBar> {
 
             return GestureDetector(
               onTap: () {
-                seletedIndex = index;
+                widget.seletedIndex = index;
                 setState(() {
                   widget.onTap(index);
                 });
               },
-              child: createItem(item, seletedIndex == index),
+              child: createItem(item, widget.seletedIndex == index),
             );
           }).toList()),
     );
@@ -58,28 +67,28 @@ class _NavigationBarState extends State<NavigationBar> {
       height: itemHeight,
       decoration: selected
           ? BoxDecoration(
-              color: item.color,
-              boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 5)],
-              borderRadius: BorderRadius.all(Radius.circular(itemHeight / 2)),
-            )
+        color: item.color,
+        boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 5)],
+        borderRadius: BorderRadius.all(Radius.circular(itemHeight / 2)),
+      )
           : null,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           selected
               ? IconTheme(
-                  data: IconThemeData(size: 26, color: Colors.white),
-                  child: Icon(item.icon))
+              data: IconThemeData(size: 26, color: Colors.white),
+              child: Icon(item.icon))
               : IconTheme(
-                  data: IconThemeData(size: 26), child: Icon(item.icon)),
+              data: IconThemeData(size: 26), child: Icon(item.icon)),
           selected
               ? Text(
-                  item.text,
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 18),
-                )
+            item.text,
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                fontSize: 18),
+          )
               : Container()
         ],
       ),

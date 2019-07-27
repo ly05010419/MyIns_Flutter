@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: home,
-      bottomNavigationBar: NavigationBar((int index) {
+      bottomNavigationBar: NavigationBar(seletedIndex: 0,onTap:(int index) {
         currentIndex = index;
         switch (index) {
           case 0:
