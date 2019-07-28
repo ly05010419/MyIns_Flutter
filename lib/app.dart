@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:myins/NavigationBar.dart';
+import 'package:myins/views/AmazonPage.dart';
 import 'package:myins/views/ApplePage.dart';
 import 'package:myins/views/GooglePage.dart';
-import 'package:myins/views/PlayStationPage.dart';
-import 'package:myins/views/AmazonPage.dart';
 import 'package:myins/views/InstagramPage.dart';
+import 'package:myins/views/PlayStationPage.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -35,28 +35,30 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: home,
-      bottomNavigationBar: NavigationBar(seletedIndex: 0,onTap:(int index) {
-        currentIndex = index;
-        switch (index) {
-          case 0:
-            home = new InstagramPage();
-            break;
-          case 1:
-            home = new PlayStationPage();
-            break;
-          case 2:
-            home = new ApplePage();
-            break;
-          case 3:
-            home = new GooglePage();
-            break;
-          case 4:
-            home = new AmazonPage();
-            break;
-        }
+      bottomNavigationBar: NavigationBar(
+          seletedIndex: currentIndex,
+          onTap: (int index) {
+            currentIndex = index;
+            switch (index) {
+              case 0:
+                home = new InstagramPage();
+                break;
+              case 1:
+                home = new PlayStationPage();
+                break;
+              case 2:
+                home = new ApplePage();
+                break;
+              case 3:
+                home = new GooglePage();
+                break;
+              case 4:
+                home = new AmazonPage();
+                break;
+            }
 
-        setState(() {});
-      }),
+            setState(() {});
+          }),
     );
   }
 
@@ -112,6 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
         }
 
         setState(() {});
+
       },
     );
   }

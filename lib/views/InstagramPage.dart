@@ -2,9 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-
-var headerImage = "http://5b0988e595225.cdn.sohucs.com/q_70,c_zoom,w_640/images/20190401/8a1d6a2fb3f848cd9baf13fa80c8b6ae.jpeg";
-var landschaftImage = "http://img06file.tooopen.com/images/20171224/tooopen_sy_231021357463.jpg";
+var headerImage =
+    "https://m.jianbihua.com/sites/default/files/styles/photo640x425/public/images/2018-03/韩风头像10.jpg?itok=UIl-7T-p";
+var landschaftImage =
+    "http://img06file.tooopen.com/images/20171224/tooopen_sy_231021357463.jpg";
 
 class InstagramPage extends StatelessWidget {
   @override
@@ -55,8 +56,7 @@ class CellView extends StatelessWidget {
                     decoration: new BoxDecoration(
                         shape: BoxShape.circle,
                         image: new DecorationImage(
-                            image: new NetworkImage(
-                                headerImage))),
+                            image: new NetworkImage(headerImage))),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 5),
@@ -87,8 +87,7 @@ class CellView extends StatelessWidget {
             child: CachedNetworkImage(
               width: width,
               fit: BoxFit.fitWidth,
-              imageUrl:
-              landschaftImage,
+              imageUrl: landschaftImage,
               placeholder: (context, url) => new CircularProgressIndicator(),
               errorWidget: (context, url, error) => new Icon(Icons.error),
             ),
@@ -193,7 +192,10 @@ class StoryListView extends StatelessWidget {
     return new SizedBox(
       height: height,
       child: new Column(
-        children: <Widget>[createTextVew(), createHeaderView(height)],
+        children: <Widget>[Padding(
+          padding: const EdgeInsets.only(top: 10,left: 10),
+          child: createTextVew(),
+        ), createHeaderView(height)],
       ),
     );
   }
@@ -202,9 +204,18 @@ class StoryListView extends StatelessWidget {
     return new Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        new Text("Stories"),
+        new Text(
+          "Stories",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         new Row(
-          children: <Widget>[new Icon(Icons.play_arrow), new Text("All Watch")],
+          children: <Widget>[
+            new Icon(Icons.play_arrow),
+            new Text(
+              "All Watch",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            )
+          ],
         ),
       ],
     );

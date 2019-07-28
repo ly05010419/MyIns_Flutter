@@ -17,12 +17,12 @@ class _NavigationBarState extends State<NavigationBar> {
     var width = MediaQuery.of(context).size.width;
 
     List<NavigationItem> itemList = [
-      new NavigationItem(FontAwesomeIcons.instagram, " INS", Colors.redAccent),
+      new NavigationItem(FontAwesomeIcons.instagram, " INS", Colors.yellow),
       new NavigationItem(
           FontAwesomeIcons.playstation, "  PS", Colors.blueAccent),
       new NavigationItem(FontAwesomeIcons.apple, "Apple", Colors.black),
       new NavigationItem(FontAwesomeIcons.google, "oogle", Colors.greenAccent),
-      new NavigationItem(FontAwesomeIcons.amazon, "mazon", Colors.yellow),
+      new NavigationItem(FontAwesomeIcons.amazon, "mazon", Colors.redAccent),
     ];
 
     return Container(
