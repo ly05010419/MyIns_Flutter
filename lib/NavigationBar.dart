@@ -17,12 +17,12 @@ class _NavigationBarState extends State<NavigationBar> {
     var width = MediaQuery.of(context).size.width;
 
     List<NavigationItem> itemList = [
-      new NavigationItem(FontAwesomeIcons.instagram, " INS", Colors.yellow),
+      new NavigationItem(FontAwesomeIcons.instagram, " INS", Colors.redAccent),
       new NavigationItem(
           FontAwesomeIcons.playstation, "  PS", Colors.blueAccent),
       new NavigationItem(FontAwesomeIcons.apple, "Apple", Colors.black),
       new NavigationItem(FontAwesomeIcons.google, "oogle", Colors.greenAccent),
-      new NavigationItem(FontAwesomeIcons.amazon, "mazon", Colors.redAccent),
+      new NavigationItem(FontAwesomeIcons.amazon, "mazon", Colors.yellow),
     ];
 
     return Container(
@@ -39,9 +39,8 @@ class _NavigationBarState extends State<NavigationBar> {
       ),
       height: 80,
       width: width,
-      padding: EdgeInsets.only(bottom: 18, left: 10, right: 10),
+      padding: EdgeInsets.only(bottom: 18),
       child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: itemList.map((item) {
             int index = itemList.indexOf(item);
 
@@ -52,19 +51,19 @@ class _NavigationBarState extends State<NavigationBar> {
                   widget.onTap(index);
                 });
               },
-              child: createItem(item, widget.seletedIndex == index),
+              child: createItem(item, widget.seletedIndex == index, width / 6),
             );
           }).toList()),
     );
   }
 
-  Widget createItem(NavigationItem item, bool selected) {
-    double itemHeight = 50;
+  Widget createItem(NavigationItem item, bool selected, double width) {
+    double itemHeight = width - 0.5;
 
     return AnimatedContainer(
       duration: Duration(milliseconds: 250),
-      width: selected ? itemHeight * 2.5 : itemHeight,
-      height: itemHeight,
+      width: selected ? itemHeight * 2 : itemHeight,
+      height: itemHeight - 20,
       decoration: selected
           ? BoxDecoration(
         color: item.color,

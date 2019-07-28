@@ -6,7 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 var headerImage = "http://5b0988e595225.cdn.sohucs.com/q_70,c_zoom,w_640/images/20190401/8a1d6a2fb3f848cd9baf13fa80c8b6ae.jpeg";
 var landschaftImage = "http://img06file.tooopen.com/images/20171224/tooopen_sy_231021357463.jpg";
 
-class HomePage extends StatelessWidget {
+class InstagramPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Column(

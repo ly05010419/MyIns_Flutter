@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class AddPage extends StatelessWidget {
+class PlayStationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(color: Colors.red,);
+    return Container(color: Colors.blueAccent,);
   }
 }

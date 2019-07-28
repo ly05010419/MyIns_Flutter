@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:myins/NavigationBar.dart';
-import 'package:myins/views/account.dart';
-import 'package:myins/views/add.dart';
-import 'package:myins/views/favorite.dart';
-import 'package:myins/views/home.dart';
-import 'package:myins/views/search.dart';
+import 'package:myins/views/ApplePage.dart';
+import 'package:myins/views/GooglePage.dart';
+import 'package:myins/views/PlayStationPage.dart';
+import 'package:myins/views/AmazonPage.dart';
+import 'package:myins/views/InstagramPage.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -14,7 +14,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int currentIndex = 0;
 
-  Widget home = new HomePage();
+  Widget home = new InstagramPage();
 
   @override
   Widget build(BuildContext context) {
@@ -39,19 +39,19 @@ class _MyHomePageState extends State<MyHomePage> {
         currentIndex = index;
         switch (index) {
           case 0:
-            home = new HomePage();
+            home = new InstagramPage();
             break;
           case 1:
-            home = new SearchPage();
+            home = new PlayStationPage();
             break;
           case 2:
-            home = new AddPage();
+            home = new ApplePage();
             break;
           case 3:
-            home = new FavoritePage();
+            home = new GooglePage();
             break;
           case 4:
-            home = new AccountPage();
+            home = new AmazonPage();
             break;
         }
 
@@ -95,19 +95,19 @@ class _MyHomePageState extends State<MyHomePage> {
         currentIndex = index;
         switch (index) {
           case 0:
-            home = new HomePage();
+            home = new InstagramPage();
             break;
           case 1:
-            home = new SearchPage();
+            home = new PlayStationPage();
             break;
           case 2:
-            home = new AddPage();
+            home = new ApplePage();
             break;
           case 3:
-            home = new FavoritePage();
+            home = new GooglePage();
             break;
           case 4:
-            home = new AccountPage();
+            home = new AmazonPage();
             break;
         }
 
