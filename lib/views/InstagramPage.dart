@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 var headerImage =
-    "https://m.jianbihua.com/sites/default/files/styles/photo640x425/public/images/2018-03/韩风头像10.jpg?itok=UIl-7T-p";
+    "http://img06file.tooopen.com/images/20171224/tooopen_sy_231021357463.jpg";
 var landschaftImage =
     "http://img06file.tooopen.com/images/20171224/tooopen_sy_231021357463.jpg";
 
